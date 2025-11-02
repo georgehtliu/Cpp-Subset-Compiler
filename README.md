@@ -1,6 +1,6 @@
-# WLP4 Compiler
+# C++ Subset Compiler
 
-A complete compiler implementation for the WLP4 programming language, which translates WLP4 source code to MIPS assembly language.
+A complete compiler implementation for the WLP4 (a subset of C++) programming language, which translates WLP4 source code to MIPS assembly language.
 
 ## Overview
 

@@ -1,0 +1,52 @@
+# Compiled binaries
+*.out
+a.out
+
+# Generated object files
+*.o
+*.obj
+
+# Generated assembly and intermediate files
+*.merl
+*.wlp4i
+*.wlp4ti
+*.asm
+*.mips
+
+# Test output files
+*.out
+*.txt
+!examples/q4/input.txt
+!examples/q4/output.txt
+!linker/input.in
+
+# Binary files (except examples)
+*.bin
+!examples/q2/hello0xf1.bin
+!linker/address.bin
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+
+# Runtime files (keep alloc.merl and print.merl for linking)
+!code-generator/alloc.merl
+!code-generator/print.merl
+!linker/starter.merl
+

@@ -205,13 +205,6 @@ int main() {
       bool lineOnlyContainsLabelDefinitions = true;
 
       for (auto i=0; i<tokenLine.size(); i++) {
-
-        // *************
-
-        // std::cout << tokenLine[i] << ' '; // just for debugging *****COMMENT THIS LINE OUT WHEN COMPILING
-
-        // *************
-
         singleTokenCheck(tokenLine[i], labels, false);
 
         const std::string lexeme = tokenLine[i].getLexeme();

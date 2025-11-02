@@ -842,17 +842,13 @@ std::string generateCode(std::shared_ptr<Tree> node, std::string procName) {
         return linesToString(lines);
     }
 
-    // shouldn't reach here
-    for (auto child : node->children) {
-        std::cout << child->getName() << std::endl;
-    }
+    // Shouldn't reach here - unrecognized node type
     throw std::runtime_error("ERROR: didn't get name for node : " + node->lexeme);
-    return "hi";
 }
 
 void generateInit(std::shared_ptr<Tree> root) {
 
-    std::cout << ".import print" << std::endl; // uncomment this line for later *****************************************
+    std::cout << ".import print" << std::endl;
     std::cout << ".import init" << std::endl;
     std::cout << ".import new" << std::endl;
     std::cout << ".import delete" << std::endl;

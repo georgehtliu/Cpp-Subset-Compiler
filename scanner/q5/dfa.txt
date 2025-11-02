@@ -1,0 +1,117 @@
+.ALPHABET
+0-9 a-z A-Z
+.STATES
+start
+w! a! i! n!
+h! i2! l! e!
+i3! n2! t!
+f!
+e2! l2! s! e3!
+p! r! i4! n3! t2! l3! n4!
+r2! e4! t3! u! r3! n5!
+N! U! L! L2!
+n6! e5! w2!
+d! e6! l4! e7! t4! e8!
+alph1! alph2! num1!
+singleCharSymbol!
+=1! =2!
+exclamation compare!
+.TRANSITIONS
+start w w
+start i i3
+start e e2
+start p p
+start r r2
+start N N
+start n n6
+start d d
+start A-M O-Z a-c f-h j-m o q s-v x-z alph1
+start 0-9 num1
+w a a
+w b-g i-z A-Z 0-9 alph2
+a i i
+a a-h j-z A-Z 0-9 alph2
+i n n
+i a-m o-z A-Z 0-9 alph2
+n a-z A-Z 0-9 alph2
+w h h
+h i i2
+h a-h j-z A-Z 0-9 alph2
+i2 l l
+i2 a-k m-z A-Z 0-9 alph2
+l e e
+l a-d f-z A-Z 0-9 alph2
+e a-z A-Z 0-9 alph2
+i3 n n2
+i3 a-e e-m o-z A-Z 0-9 alph2
+n2 t t
+n2 a-s u-z A-Z 0-9 alph2
+t a-z A-Z 0-9 alph2
+i3 f f
+i3 a-e g-z A-Z 0-9 alph2
+f a-z A-Z 0-9 alph2
+e2 l l2
+e2 a-k m-z A-Z 0-9 alph2
+l2 s s
+l2 a-r t-z A-Z 0-9 alph2
+s e e3
+s a-d f-z A-Z 0-9 alph2
+e3 a-z A-Z 0-9 alph2
+p r r2
+p a-q s-z A-Z 0-9 alph2
+r2 i i4
+r2 a-h j-z A-Z 0-9 alph2
+i4 n n3
+i4 a-m o-z A-Z 0-9 alph2
+n3 t t2
+n3 a-s u-z A-Z 0-9 alph2
+t2 l l3
+t2 a-k m-z A-Z 0-9 alph2
+l3 n n4
+l3 a-m o-z A-Z 0-9 alph2
+n4 a-z A-Z 0-9 alph2
+r2 e e4
+r2 a-d f-z A-Z 0-9 alph2
+e4 t t3
+e4 a-s u-z A-Z 0-9 alph2
+t3 u u
+t3 a-s t-z A-Z 0-9 alph2
+u r r3
+u a-q s-z A-Z 0-9 alph2
+r3 n n5
+r3 a-m o-z A-Z 0-9 alph2
+n5 a-z A-Z 0-9 alph2
+N U U
+N A-T V-Z a-z 0-9 alph2
+U L L
+U A-K M-Z a-z 0-9 alph2
+L L L2
+L A-K M-Z a-z 0-9 alph2
+L2 A-Z a-z 0-9 alph2
+n6 e e5
+n6 a-d f-z A-Z 0-9 alph2
+e5 w w2
+e5 a-v x-z A-Z 0-9 alph2
+w2 a-z A-Z 0-9 alph2
+d e e6
+d a-d f-z A-Z 0-9 alph2
+e6 l l4
+e6 a-k m-z A-Z 0-9 alph2
+l4 e e7
+l4 a-d f-z A-Z 0-9 alph2
+e7 t t4
+e7 a-s u-z A-Z 0-9 alph2
+t4 e e8
+t4 a-d f-z A-Z 0-9 alph2
+e8 a-z A-Z 0-9 alph2
+alph1 a-z A-Z 0-9 alph2
+num1 0-9 num1
+start ( ) { } + - * % , ; [ ] & / singleCharSymbol
+start = =1
+start ! exclamation
+start < > compare
+=1 = =2
+exclamation = =2
+compare = =2
+alph2 a-z A-Z 0-9 alph2
+.INPUT

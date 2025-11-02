@@ -1,0 +1,132 @@
+start BOF procedures EOF
+BOF BOF
+procedures main
+main INT WAIN LPAREN dcl COMMA dcl RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+WAIN wain
+LPAREN (
+dcl type ID
+type INT
+INT int
+ID a : int
+COMMA ,
+dcl type ID
+type INT
+INT int
+ID b : int
+RPAREN )
+LBRACE {
+dcls dcls dcl BECOMES NULL SEMI
+dcls .EMPTY
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID array : int*
+BECOMES =
+NULL NULL : int*
+SEMI ;
+statements statements statement
+statements statements statement
+statements statements statement
+statements statements statement
+statements statements statement
+statements statements statement
+statements .EMPTY
+statement lvalue BECOMES expr SEMI
+lvalue ID : int*
+ID array : int*
+BECOMES =
+expr term : int*
+term factor : int*
+factor NEW INT LBRACK expr RBRACK : int*
+NEW new
+INT int
+LBRACK [
+expr term : int
+term factor : int
+factor NUM : int
+NUM 2 : int
+RBRACK ]
+SEMI ;
+statement lvalue BECOMES expr SEMI
+lvalue STAR factor : int
+STAR *
+factor ID : int*
+ID array : int*
+BECOMES =
+expr term : int
+term factor : int
+factor ID : int
+ID a : int
+SEMI ;
+statement lvalue BECOMES expr SEMI
+lvalue STAR factor : int
+STAR *
+factor LPAREN expr RPAREN : int*
+LPAREN (
+expr expr PLUS term : int*
+expr term : int*
+term factor : int*
+factor ID : int*
+ID array : int*
+PLUS +
+term factor : int
+factor NUM : int
+NUM 1 : int
+RPAREN )
+BECOMES =
+expr term : int
+term factor : int
+factor ID : int
+ID b : int
+SEMI ;
+statement PRINTLN LPAREN expr RPAREN SEMI
+PRINTLN println
+LPAREN (
+expr term : int
+term factor : int
+factor STAR factor : int
+STAR *
+factor ID : int*
+ID array : int*
+RPAREN )
+SEMI ;
+statement PRINTLN LPAREN expr RPAREN SEMI
+PRINTLN println
+LPAREN (
+expr term : int
+term factor : int
+factor STAR factor : int
+STAR *
+factor LPAREN expr RPAREN : int*
+LPAREN (
+expr expr PLUS term : int*
+expr term : int*
+term factor : int*
+factor ID : int*
+ID array : int*
+PLUS +
+term factor : int
+factor NUM : int
+NUM 1 : int
+RPAREN )
+RPAREN )
+SEMI ;
+statement DELETE LBRACK RBRACK expr SEMI
+DELETE delete
+LBRACK [
+RBRACK ]
+expr term : int*
+term factor : int*
+factor ID : int*
+ID array : int*
+SEMI ;
+RETURN return
+expr term : int
+term factor : int
+factor ID : int
+ID b : int
+SEMI ;
+RBRACE }
+EOF EOF

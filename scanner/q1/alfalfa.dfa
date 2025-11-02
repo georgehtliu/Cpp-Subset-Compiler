@@ -1,0 +1,32 @@
+.ALPHABET
+a l f
+.STATES
+start
+fail
+seen_a1
+seen_l1
+seen_f1
+seen_a2
+seen_l2
+seen_f2
+seen_a3!
+.TRANSITIONS
+start a seen_a1
+start l f fail
+seen_a1 l seen_l1
+seen_a1 a f fail
+seen_l1 f seen_f1
+seen_l1 a l fail
+seen_f1 a seen_a2
+seen_f1 l f fail
+seen_a2 l seen_l2
+seen_a2 a f fail
+seen_l2 f seen_f2
+seen_l2 a l fail
+seen_f2 a seen_a3
+seen_f2 l f fail
+fail a l f fail
+seen_a3 a l f seen_a3
+.INPUT
+alfalfa
+

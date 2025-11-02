@@ -1,0 +1,10 @@
+int wain(int a, int b) {
+  int* array = NULL;
+  array = new int[2];
+  *array = a;
+  *(array+1) = b;
+  println(*array);
+  println(*(array+1));
+  delete [] array; 
+  return b;
+}

@@ -1,0 +1,9 @@
+int wain(int *array, int size) {
+  int result = 0;
+  if (*&*&*&*&*&size != 0) {
+    if (containsDuplicates(array,size) == (2%41)/2) {
+      result = 1;
+    } else { println(55555); }
+  } else { println(404); }
+  return result;
+}

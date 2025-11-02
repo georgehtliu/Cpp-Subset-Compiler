@@ -1,0 +1,97 @@
+int max(int a, int b) {
+  int answer = 0;
+  if (a > b) {
+    answer = a;
+  } else {
+    answer = b;
+  }
+  return answer;
+}
+int abs(int a) {
+  int neg = 0;
+  int answer = 0;
+  int zero = 0;
+  neg = 0-1;
+  if (a < zero) {
+    answer = a * neg;
+  } else {
+    answer = a;
+  }
+  return answer;
+}
+int tieBreak(int a, int b) {
+  int absA = 0;
+  int absB = 0;
+  int answer = 0;
+  absA = abs(a);
+  absB = abs(b);
+  if (absA == absB) {
+    if (a < 0) {
+      answer = a;
+    } else {
+      answer = b;
+    }
+  } else {
+    if (absA < absB) {
+      answer = a;
+    } else {
+      answer = b;
+    }
+  }
+  return answer;
+}
+int wain(int* begin, int size){
+  int *occurs = NULL;
+  int i = 0;
+  int n = 0;
+  int maxOccur = 0;
+  int* maxes = NULL;
+  int count = 0;
+  int currNum = 0;
+  int currOccur = 0;
+  int answer = 0;
+  int nextNum = 0;
+  occurs = new int[483]; // occurs[0] : -241, occurs[1] : -240, ... occurs[n] : -241+n
+  maxes = new int[483];
+  while(i < size) { // initialize with all 0s
+    *(occurs + i) = n;
+    i = i + 1;
+  }
+  i = 0;
+  while(i < size) { // fill in occurs array
+    n = *(begin+i); // n is actual number in array
+    *(occurs + n + 241) = *(occurs + n + 241) + 1; // occurs[n + 241] += 1
+    i = i + 1;
+  }
+  i = 0;
+  while(i < 483) { // obtain maxOccur
+    currOccur = *(occurs + i);
+    maxOccur = max(maxOccur, currOccur);
+    i = i + 1;
+  }
+  i = 0;
+  while(i < 483) { // put numbers w max occurrence in memory
+    currNum = i - 241;
+    currOccur = *(occurs + i);
+    if (currOccur == maxOccur) {
+      *(maxes + count) = currNum; // add number to maxes array
+      count = count + 1;
+    } else {}
+    i = i + 1;
+  }
+  println(69);
+  println(maxOccur);
+  println(count);
+  i = 1;
+  answer = *(maxes + 0);
+  while (i < count) {
+    currNum = *(maxes + i);
+    answer = tieBreak(answer, currNum);
+    println(answer);
+    i = i + 1;
+  }
+  println(answer);
+  delete[] maxes;
+  delete[] occurs;
+  return answer;
+}

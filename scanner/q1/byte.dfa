@@ -1,0 +1,78 @@
+.ALPHABET
+0-9 -
+.STATES
+start
+neg
+a!
+b!
+c!
+d!
+a2!
+b2!
+c2!
+d2!
+e2!
+zero!
+fail
+.TRANSITIONS
+fail - 0-9 fail
+start - neg
+neg 0 - fail
+neg 1 a
+neg 2-9 b
+a 0-1 b
+a 3-9 c
+a 2 d
+a - fail
+b 0-9 c
+b - fail
+c 0-9 - fail
+d 9 fail
+d 0-8 c
+d - fail
+zero - 0-9 fail
+start 0 zero
+start 1 c2
+start 2 a2
+start 3-9 b2
+c2 0-9 b2
+c2 - fail
+a2 5 e2
+a2 0-4 b2
+a2 6-9 d2
+a2 - fail
+b2 0-9 d2
+b2 - fail
+d2 0-9 - fail
+e2 6-9 fail
+e2 0-5 d2
+e2 - fail
+.INPUT
+-128
+-
+-0
+-12
+-1
+-13
+-135
+-29
+-290
+-2993
+-99
+-890
+-129
+-032
+128
+255
+256
+1223
+1209
+90
+9
+12
+125
+200
+002
+0-3
+459-
+0-3
